@@ -1,0 +1,32 @@
+<html>
+<link rel="stylesheet" type="text/css" href="main.css">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<meta charset="utf-8">
+<body>
+<div class="container">
+<div class="jumbotron">
+  <h1 class="display-4">HOWL do you do?!</h1>
+  <h3>Welcome to our Wolf-Community! You can view some of our furry members below </h3>
+  <div class="jumbolist">
+    <% for (const i in info) { %>
+  <hr class="my-4">
+  <h4><a href="/wolves/<%=info[i].name %>"><%=info[i].name %></a></h4>
+  <h4>Wolf Type: <%=info[i].type %></h4>
+  <h4>Wolf Fur: <%=info[i].fur %></h4>
+  <h4>Aggression levels: <%=info[i].aggression %></h4>
+  
+  <a href="/edit/<%= info[i].name %>">Edit</a>
+
+  <form action="/destroy/<%= info[i].name %>" method = "post">
+  	<button>Delete</button>
+  </form> 
+   <% } %>
+  <a class="btn btn-primary btn-lg" href="/new" role="button">Add a Wolf!</a>
+</div>
+</div>
+</div>
+<div class="footer">
+	<img src="wolfpack.jpeg" alt="wolf" class="pack">
+</div>
+</body>
+</html>

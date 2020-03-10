@@ -1,0 +1,62 @@
+<html>
+<meta charset="utf-8">
+<link rel="stylesheet" type="text/css" href="main.css">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<title>Wolf Form</title>
+<body>
+<div class="header">
+<h2>Add your Wolf to our Wolf-Community!</h2>
+</div>
+<form action="/wolves" method="POST">
+	<% if(messages.name) { %>
+     <% for (var x of messages.name) { %>
+      <h3><%= x %></h3>
+     <% } %>
+ <% } %>
+  <div class="form-group">
+    <label for="exampleFormControlInput1">Name of Wolf/ Call Name</label>
+    <input type="text" name="name" class="form-control" id="exampleFormControlInput1" placeholder="Name">
+  </div>
+ 	<% if(messages.aggression) { %>
+     <% for (var x of messages.aggression) { %>
+      <h3><%= x %></h3>
+     <% } %>
+ <% } %>
+  <div class="form-group">
+    <label for="exampleFormControlSelect1">Aggression Level</label>
+    <select name="aggression" class="form-control" id="exampleFormControlSelect1">
+      <option>Very Aggressive</option>
+      <option>Moderately Aggressive</option>
+      <option>Reserved/Low aggression</option>
+    </select>
+  </div>
+ 	<% if(messages.type) { %>
+     <% for (var x of messages.type) { %>
+      <h3><%= x %></h3>
+     <% } %>
+ <% } %>
+  <div class="form-group">
+    <label for="exampleFormControlSelect2">Wolf Type</label>
+    <select name="type" multiple class="form-control" id="exampleFormControlSelect2">
+      <option>Grey Wolf</option>
+      <option>Mexican Wolf</option>
+      <option>Northwestern Wolf</option>
+      <option>Tundra Wolf</option>
+      <option>Indian Wolf</option>
+      <option>Eurasian Wolf</option>
+    </select>
+  </div>
+ 	<% if(messages.fur) { %>
+     <% for (var x of messages.fur) { %>
+      <h3><%= x %></h3>
+     <% } %>
+ <% } %>
+  <div class="form-group">
+    <label for="exampleFormControlTextarea1">Description of fur color</label>
+    <textarea name="fur" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+  </div>
+  <button>Add Wolf</button>
+  <a href="/">Wolf Dashboard</a>
+</form>
+</body>
+</html>

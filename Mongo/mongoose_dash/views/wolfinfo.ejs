@@ -1,0 +1,17 @@
+<html>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<meta charset="utf-8">
+<body>
+<div class="jumbotron">
+  <hr class="my-4">
+  <h4> <%= wolf.name %></h4>
+  <h4>Wolf Type: <%= wolf.type %></h4>
+  <h4>Wolf Fur: <%= wolf.fur %></h4>
+  <h4>Aggression levels: <%= wolf.aggression %></h4>
+  <a class="btn btn-primary btn-lg" href="/" role="button">Wolf Dashboard</a>
+</div>
+  <form action="/destroy/<%= wolf.name %>" method = "post">
+    <button>Delete</button>
+  </form>
+</body>
+</html>
