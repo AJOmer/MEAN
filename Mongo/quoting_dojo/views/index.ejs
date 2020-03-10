@@ -1,0 +1,32 @@
+<html>
+<meta charset="utf-8">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<title>Quote Form</title>
+<body>
+	<h1>Welcome to quoting Dojo</h1>
+
+<form action="/quotes" method="post">
+	<% if(messages.name) { %>
+     <% for (var x of messages.name) { %>
+      <h3><%= x %></h3>
+     <% } %>
+ <% } %>
+  <div class="form-group">
+    <label for="exampleFormControlInput1">Your Name</label>
+    <input type="text" name="name" class="form-control" id="exampleFormControlInput1" placeholder="Government Name">
+  </div>
+  	<% if(messages.quote) { %>
+		<p>testtest</p>
+     <% for (var x of messages.quote) { %>
+      <h3><%= x %></h3>
+     <% } %>
+ <% } %>
+  <div class="form-group">
+    <label for="exampleFormControlInput1">Your quote</label>
+    <input type="text" name="quote"  class="form-control" id="exampleFormControlInput1" placeholder="Quote">
+  </div>
+  <button>Submit</button>
+  <a href="/mainpage">Skip to Quotes</a>
+</form>
+</body>
+</html>

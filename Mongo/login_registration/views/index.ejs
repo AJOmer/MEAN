@@ -1,0 +1,70 @@
+<html lang="en">
+<head>
+	<title>Login and Registration</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<style type="text/css">
+	h1{
+		text-align: center;
+	}
+	p{
+		color: red;
+	}
+</style>
+<body>
+	<div>
+		<h1>Login & Registration</h1>
+	</div>
+    <% if(messages.registration) { %>
+     <% for (var x of messages.registration) { %>
+      <h3><%= x %></h3>
+     <% } %>
+ <% } %>
+	<h2>Register here!</h2>
+	<form method="POST" action="/registration">
+  <div class="form_group">
+    <label for="formGroupExampleInput">First name:</label>
+    <input type="text" class="form-control" name="first_name" id="formGroupExampleInput" placeholder="name">
+  </div>
+  <div class="form_group">
+    <label for="formGroupExampleInput2">Last name:</label>
+    <input type="text" class="form-control" name="last_name" id="formGroupExampleInput2" placeholder="name">
+  </div>
+    <div class="form_group">
+    <label for="formGroupExampleInput2">Email:</label>
+    <input type="text" class="form-control" name="email" id="formGroupExampleInput2" placeholder="example@example.com">
+  </div>
+    <div class="form_group">
+    <label for="formGroupExampleInput2">Birthdate:</label>
+    <input type="number" class="form-control" name="birthdate" id="formGroupExampleInput2" placeholder="Date">
+<!--     Month: <input type="number" class="form-control" name="month" id="formGroupExampleInput2" placeholder="Month">
+    Year: <input type="number" class="form-control" name="year" id="formGroupExampleInput2" placeholder="Year"> -->
+  </div>
+    <div class="form_group">
+    <label for="formGroupExampleInput2">Password:</label>
+    <input type="text" class="form-control" name="password" id="formGroupExampleInput2" placeholder="classified">
+  </div>
+  <input type="submit" name="add_user" value="Submit">
+</form>
+<div>
+  <% if(messages.login) { %>
+     <% for (var x of messages.login) { %>
+      <h3><%= x %></h3>
+     <% } %>
+ <% } %>
+	<form method='POST' action="/sessions">
+	<h2>Login here!</h2>
+	<div class="form_group2">
+    <label for="formGroupExampleInput">Email:</label>
+    <input type="text" class="form-control" name="elog" id="formGroupExampleInput" placeholder="example@example.com">
+  </div>
+  <div class="form_group2">
+    <label for="formGroupExampleInput2">Password:</label>
+    <input type="password" class="form-control" name="password" id="formGroupExampleInput2" placeholder="classified">
+  </div>
+  <input type="submit" name="login" value="Submit">
+</form>
+</div>
+</body>
+</html

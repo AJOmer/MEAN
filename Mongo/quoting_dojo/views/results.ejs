@@ -1,0 +1,25 @@
+<html>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<meta charset="utf-8">
+<body>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">Name</th>
+      <th scope="col">Quote</th>
+      <th scope="col">Posted on</th>
+    </tr>
+  </thead>
+  <tbody>
+  	<% for (const i in info) { %>
+    <tr>
+      <td><%= info[i].name %></td>
+      <td>"<%= info[i].quote %>"</td>
+      <td><%= info[i].createdAt %></td>
+    </tr>
+    <% } %>
+  </tbody>
+  <a href="/">Home</a>
+</table>
+</body>
+</html>
