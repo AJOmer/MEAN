@@ -1,0 +1,30 @@
+<html lang="en">
+<meta charset="utf-8">
+<link rel="stylesheet" type="text/css" href="details.css">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<body>
+	<div class="header">
+		<h1>Details page for <%=cats.name %></h1>
+		<img src="<%=cats.picture %>">
+	</div>
+	<div class="body">
+		<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">Age</th>
+      <th scope="col">Favorite Food</th>
+      <th scope="col">Sleeping Spots</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row"><%=cats.Age %></th>
+      <td><%= cats.favorite_food %></td>
+      <td><%= cats.sleeping_spots %></td>
+    </tr>
+  </tbody>
+</table>
+	</div>
+	<a href="/cats"><button>HOME</button></a>
+</body>
+</html>
