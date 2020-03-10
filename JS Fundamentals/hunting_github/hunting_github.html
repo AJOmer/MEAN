@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Hunting github</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script type="text/javascript"></script>
+	<script type="text/javascript">
+		$(document).ready(function() {
+			$('button').click(function(){
+				$.get("https://api.github.com/users/AJOmer", function displayName(data){
+					// var myName=data.login;
+					$('h1').html(data.login)
+					});
+				});
+			});				
+	</script>
+</head>
+<body>
+	<button>Show the name!</button>
+	<h1> @</h1>
+</body>
+</html>
